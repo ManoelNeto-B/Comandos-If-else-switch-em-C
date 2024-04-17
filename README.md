@@ -1,2 +1,2 @@
-# Comandos-If-else-switch-em-C
+# Estruturas de decisão na linguagem C
 lista de exercícios 6
