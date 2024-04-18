@@ -9,35 +9,30 @@ informando que a divisão é indefinida.*/
 #include <stdio.h>
 #include <locale.h>
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Portuguese");
 
-    int n, d, m;
+    int numerador, denominador, resto;
 
-    printf("checagem para determinar se uma divisão é possível\n");
+    printf("Checagem para determinar se uma divisão é possível\n");
 
-    printf("Por favor informe o numerador\n");
-    scanf("%i", &n);
+    // Solicita ao usuário que informe o numerador
+    printf("Por favor, informe o numerador: ");
+    scanf("%d", &numerador);
 
-    printf("Por favor informe o denominador\n");
-    scanf("%i", &d);
+    // Solicita ao usuário que informe o denominador
+    printf("Por favor, informe o denominador: ");
+    scanf("%d", &denominador);
 
-    if (d == 0)
-    {
-        printf("A operação não pode ser realizada quando o denominador for: 0");
-    }
-    else
-    {
-        m = n % d;
-        if (m != 0)
-        {
-            printf("a divisão não é exata porque seu resto foi igual a %i", m);
-        }
-        else
-        {
-            printf("a divisão é exata porque seu resto foi igual a %i", m);
+    if (denominador == 0) {
+        printf("A operação não pode ser realizada quando o denominador é zero.\n");
+    } else {
+        resto = numerador % denominador;
+        if (resto != 0) {
+            printf("A divisão não é exata porque o resto foi igual a %d.\n", resto);
+        } else {
+            printf("A divisão é exata porque o resto foi igual a %d.\n", resto);
         }
     }
-    return (0);
+    return 0;
 }
